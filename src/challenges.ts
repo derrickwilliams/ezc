@@ -1,7 +1,8 @@
 export class ChallengeItem {
     title: string;
-    // judges: any[] = [];
-    // entries: any[] = [];
+    criteria: any[] = [];
+    judges: any[] = [];
+    entries: any[] = [];
 
     constructor(title: string) {
         this.title = title;

@@ -4,6 +4,11 @@ import * as low from 'lowdb';
 import * as FileSync from 'lowdb/adapters/FileSync';
 import * as uuid from 'uuid/v4';
 
+const applyId = coll => coll.map(c => ({
+  ...{ id: uuid() },
+  ...c,
+}));
+
 @Injectable()
 export class ChallengesService {
   private adapter: any;
@@ -33,7 +38,11 @@ export class ChallengesService {
   }
 
   add(challenge: ChallengeItem): any {
-    const newChallenge = { id: uuid(), ...challenge };
+    const newChallenge = {
+      id: uuid(),
+      ...challenge,
+      ...{ criteria: applyId(challenge.criteria || []) },
+    };
 
     const res = this.db.get('challenges')
       .push(newChallenge)
