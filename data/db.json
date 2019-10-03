@@ -1,37 +1,4 @@
 {
-  "challenges": [
-    {
-      "id": "4784ebfb-7283-4176-8c5c-172a45dfb60a",
-      "title": "Slouvakoff"
-    },
-    {
-      "id": "ecc33c14-9b66-495f-9c8f-2e6865e8f4fc",
-      "title": "Slouvakoff",
-      "criteria": [
-        {
-          "description": "Overall taste"
-        }
-      ]
-    },
-    {
-      "id": "2f6e7bbf-2ff9-4f13-80d8-3d19aa4d8c1f",
-      "title": "Slouvakoff",
-      "criteria": [
-        {
-          "description": "Overall taste"
-        }
-      ]
-    },
-    {
-      "id": "32edb7d0-e8f3-4d66-ab33-96a2c33c43b2",
-      "title": "Slouvakoff",
-      "criteria": [
-        {
-          "id": "9c1c9c8f-f59b-4d8e-9daf-962183554be8",
-          "description": "Overall taste"
-        }
-      ]
-    }
-  ],
+  "challenges": [],
   "users": []
 }
