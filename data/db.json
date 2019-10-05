@@ -1,4 +1,15 @@
 {
-  "challenges": [],
+  "challenges": [
+    {
+      "id": "a833f2db-1a08-48a1-a4af-30f0eded444f",
+      "title": "Slouvakoff",
+      "criteria": [
+        {
+          "id": "5f0a4026-6d97-4252-b707-2bcfe9a0a5ce",
+          "description": "Overall taste"
+        }
+      ]
+    }
+  ],
   "users": []
 }

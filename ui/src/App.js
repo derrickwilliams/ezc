@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { ThemeProvider } from 'mineral-ui/themes';
+import { Box } from 'mineral-ui';
+
+import CreateChallengeDialog from './components/CreateChallengeDialog';
+import OpenChallengeDialog from './components/OpenChallengeDialog';
+import JoinChallengeDialog from './components/JoinChallengeDialog';
+import MainMenu from './components/MainMenu';
+
 import './App.css';
 
 function App() {
+  const [currentOpenDialog, setCurrentOpenDialog] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <>
+        <Box css={{ display: 'flex', alignItems: 'center', height: '100vh' }}>
+          <MainMenu
+            onCreateClick={() => setCurrentOpenDialog(CreateChallengeDialog.NAME)}
+            onOpenClick={() => setCurrentOpenDialog(OpenChallengeDialog.NAME)}
+            onJoinClick={() => setCurrentOpenDialog(JoinChallengeDialog.NAME)}
+          />
+        </Box>
+
+        <CreateChallengeDialog
+          isOpen={currentOpenDialog === CreateChallengeDialog.NAME}
+          onClose={() => setCurrentOpenDialog(null)}
+        />
+        <OpenChallengeDialog
+          isOpen={currentOpenDialog === OpenChallengeDialog.NAME}
+          onClose={() => setCurrentOpenDialog(null)}
+        />
+        <JoinChallengeDialog
+          isOpen={currentOpenDialog === JoinChallengeDialog.NAME}
+          onClose={() => setCurrentOpenDialog(null)}
+        />
+      </>
+    </ThemeProvider>
   );
 }
 
